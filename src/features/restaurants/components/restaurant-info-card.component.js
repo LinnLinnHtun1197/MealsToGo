@@ -5,6 +5,7 @@ import { Card } from "react-native-paper";
 import { SvgXml } from 'react-native-svg';
 import star from '../../../../assets/star';
 import open from "../../../../assets/open";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 const Title = styled(Text)`
     font-family: ${(props) => props.theme.fonts.heading};
@@ -77,10 +78,12 @@ export const RestaurantInfoCard = ({restaurant = {}}) => {
                             CLOSED TEMPORARILY
                         </Text>
                         )}
-                        <View style={{ paddingLeft: 16 }} />
+                         <Spacer position="left" size="large">
                         {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-                        <View style={{ paddingLeft: 16 }} />
+                        </Spacer>
+                        <Spacer position="left" size="large">
                         <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+                        </Spacer>
                     </SectionEnd>
                 </Section>
                 <Address>{address}</Address>
